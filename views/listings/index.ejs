@@ -1,0 +1,19 @@
+<% layout ("../layout/boiler.ejs") %>
+
+<div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+    <% for(let dt of dataOne ) { %> 
+
+       <a class="link" href="/listings/<%=dt._id%>">
+        <div class="col">
+            <div class="card" >
+                <img src="<%=dt.image%>" class="card-img-top" alt="listings-image">
+                <div class="card-body">
+                  <p class="card-text"><%=dt.title%></p>
+                </div>
+              </div>
+        </div>
+        
+        
+       </a>
+        <%}%>
+</div>

@@ -1,0 +1,13 @@
+.card-img-top{
+    height: 22rem !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+}
+.card{
+    border: none !important;
+    margin-bottom: 15px !important;
+    
+}
+.card-body{
+    padding: 0 !important;
+}
