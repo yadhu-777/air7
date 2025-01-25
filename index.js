@@ -10,7 +10,12 @@ const ejsmate = require("ejs-mate");
 app.engine('ejs', ejsmate);
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"/public")));
-
+const methodOverride = require('method-override')
+app.use(methodOverride("_method"));
+const Experr = require("./utils/experr.js");
+const  reviewroutes = require("./routes/reviewroutes.js");
+const session = require("express-session");
+const flash = require("connect-flash");
 
 main().catch(err => console.log(err));
 
@@ -22,5 +27,29 @@ async function main() {
 app.listen(3000,()=>{
     console.log("connected to server");
 });
+const sessionOpstions ={
+  secret:"yahsko",
+  resave:false,
+  saveUninitialized:true,
+  cookie:{
+    expires:Date.now() +7*24 *60*60*1000,
+    maxAge:Date.now() +7*24 *60*60*1000,
+    httpOnly:true
+  }
+}
 
+app.use(session(sessionOpstions));
+app.use(flash());
+app.use((req,res,next)=>{
+  res.locals.msg= req.flash("start");
+  next();
+});
 app.use("/listings",listingsroute);
+app.use("/rev/:id",reviewroutes);
+
+
+
+app.use((err,req,res,next)=>{
+ let {status = 500,message="something wrong"} = err;
+ res.status(status).render("listings/error.ejs",{message});
+})

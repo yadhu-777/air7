@@ -1,0 +1,35 @@
+<% layout ("../layout/boiler.ejs") %>
+
+<div class="row">
+
+    <div class="col-6 offset-3 mt-5">
+        <h3 class="mb-3">Edit Listings</h3>
+        <form method="POST" action="/listings/<%=datafour._id%>/edit">
+            <label class="form-label"  for="">title</label>
+            <input class="form-control" type="text" name="edit[title]" value="<%=datafour.title%>">
+
+
+            <label class="form-label"  for="">Decription</label>
+            <input class="form-control" type="text" name="edit[description]"  value="<%=datafour.description%>">
+
+
+            <label class="form-label"  for="">image url</label>
+            <input class="form-control" type="text" name="edit[image]"  value="<%=datafour.image%>">
+
+
+            <label class="form-label"  for="">Price</label>
+            <input class="form-control" type="number" name="edit[price]"  value="<%=datafour.price%>">
+
+
+            <label class="form-label"  for="">Location</label>
+            <input class="form-control" type="text" name="edit[location]"  value="<%=datafour.location%>">
+
+
+            <label class="form-label"  for="">Country</label>
+            <input class="form-control" type="text" name="edit[country]"  value="<%=datafour.country%>">
+
+
+            <button class="btn btn-primary">Confirm</button>
+        </form>
+    </div>
+</div>

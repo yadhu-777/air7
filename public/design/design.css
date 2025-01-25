@@ -11,3 +11,11 @@
 .card-body{
     padding: 0 !important;
 }
+.link{
+    text-decoration: none !important;
+}
+.card-one{
+    border: 1px solid black !important;
+    padding: 2rem !important;
+    border-radius: 1rem !important;
+}

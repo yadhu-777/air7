@@ -1,0 +1,41 @@
+<%- layout("../layout/boiler.ejs") %>
+
+<div class="row ">
+    <div class="col-5 offset-3 mt-5">
+        <h3 class="mb-4">Add listings</h3>
+        <form method="POST" action="/listings/new" novalidate class="needs-validation">
+            <label class="form-label" >Title</label>
+        <input class="form-control" type="text" name="listings[title]" required>
+
+        <label class="form-label" >Description</label>
+        <input class="form-control" type="text" name="listings[description]" required>
+
+        <label class="form-label" >image Url</label>
+        <input class="form-control" type="text" name="listings[image]">
+
+      
+        <div class="row">
+       <div class="col-6">
+             
+        <label class="form-label " >price</label>
+        <input class="form-control " type="number" name="listings[price]" required>
+       </div>
+       
+       <div class="col">
+        <label class="form-label " >country</label>
+        <input class="form-control " type="text" name="listings[country]" required>
+       
+       </div>
+        </div>
+       
+  
+
+        <label class="form-label" >location</label>
+        <input class="form-control" type="text" name="listings[location]" required>
+
+
+        <button class="btn btn-primary mt-4">submit</button>
+        </form>
+
+    </div>
+</div>
