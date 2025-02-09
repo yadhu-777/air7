@@ -5,8 +5,9 @@
   <h2 class="offset-3 mt-5">Edit Listings</h2>
     <div class="col-8 offset-3 mt-5">
         <div class="card col-5" >
-            <img src="<%=dataTwo.image%>" class="card-img-top" alt="listings-image">
-            <div class="card-body">
+            <img src="<%=dataTwo.image%>" class="card-img-top mb-2" alt="listings-image">
+            <div class="card-body ">
+              <p>Owned By <b> <%= dataTwo.owner.username%></b></p>
               <p class="mt-2">&#8377;<%=dataTwo.price%>/night</p>
               <p class="card-text"><%=dataTwo.title%></p>
               <p><%=dataTwo.description%></p>
@@ -18,7 +19,7 @@
          
          <div class="row">
          <div class="col d-flex justify-content  ">
-       
+   
            <a href="/listings/<%=dataTwo._id%>/edit">
             <button class="btn btn-primary me-3">Edit</button>
            </a>
@@ -26,6 +27,8 @@
           <form method="POST" action="/listings/<%=dataTwo._id%>?_method=DELETE">
             <button class="btn btn-danger">delete</button>
           </form>
+        
+
       
          </div>
          </div>

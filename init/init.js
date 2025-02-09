@@ -16,6 +16,11 @@ async function main() {
 
 const initData = async()=>{
     await Listings.deleteMany({});
+   datai.data =  datai.data.map((obj)=>(
+      {...obj,owner:"67a873788af1103d262c1394"}
+
+
+    ));
    let datau =  await Listings.insertMany(datai.data);
     console.log(datau);
 }

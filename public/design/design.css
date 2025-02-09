@@ -1,7 +1,13 @@
 .card-img-top{
+   
     height: 22rem !important;
     border-radius: 1rem !important;
     width: 100% !important;
+}
+.card-img-top:hover{
+    background-color: white !important;
+    opacity: 0.9;
+   
 }
 .card{
     border: none !important;
